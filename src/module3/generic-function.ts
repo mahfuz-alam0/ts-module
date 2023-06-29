@@ -1,0 +1,31 @@
+// arrow function generic 
+const createArray = <X, Y>(param1: X, param2: Y): [X,Y] => {
+    return [param1, param2]
+}
+
+const result1 = createArray<string, string>('persian', 'Garman')
+const result2 = createArray<boolean, Array<string>>(true, ['Bangladesh'])
+const result3 = createArray<number, boolean>(1, true)
+const result4 = createArray<object, boolean>({ name: 'persian' }, true)
+
+type Name = { name: string }
+
+const result5 = createArray<Name, boolean>({ name: 'persian' }, true);
+
+console.log(result5)
+
+// spread operator
+
+const crush_generic = 'kat winstan'
+
+const myInfo = {
+    name: 'persian',
+    age: 20,
+    salary: 100000,
+}
+
+const newData = {
+    ...myInfo,
+    crush: crush_generic
+}
+
